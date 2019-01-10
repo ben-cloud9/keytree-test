@@ -3,9 +3,9 @@ import { IState, IAction } from '../types/types';
 
 const defaultState: IState = {
     error: undefined,
-    loading: true,
+    loading: false,
     repoList: [],
-    searchTerm: 'ben-cloud9'
+    searchTerm: ''
 };
 
 const defaultAction: IAction = {
@@ -31,6 +31,12 @@ export default (state: IState = defaultState, action: IAction = defaultAction): 
             return {
                 ...state,
                 error: action.error
+            }
+
+        case 'SET_SEARCH_TERM':
+            return {
+                ...state,
+                searchTerm: action.searchTerm
             }
 
         default:

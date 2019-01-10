@@ -1,0 +1,27 @@
+.repo-list-item {
+    width: 100%;
+    border-bottom: 1px solid grey;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    padding: 16px;
+}
+
+.repo-list-item__header {
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.repo-list-item__description {
+    margin-bottom: 16px;
+    margin-top: 0;
+}
+
+.repo-list-item__meta {
+    list-style-type: none;
+    padding-left: 0;
+
+    li {
+        margin-bottom: 16px;
+    }
+}

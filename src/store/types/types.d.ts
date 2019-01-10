@@ -98,14 +98,15 @@ export interface IState {
    error: string | undefined;
    loading: boolean | undefined;
    repoList: IRepo[] | undefined;
-   searchTerm: string;
+   searchTerm: string | undefined;
 };
 
-export type ActionTypes = '@@INIT' | 'SET_REPO_LIST' | 'SET_LOADING' | 'SET_ERROR';
+export type ActionTypes = '@@INIT' | 'SET_REPO_LIST' | 'SET_LOADING' | 'SET_ERROR' | 'SET_SEARCH_TERM';
 
 export interface IAction {
    type: ActionTypes;
    repoList?: IRepo[];
    loading?: boolean;
    error?: string;
+   searchTerm?: string;
 };

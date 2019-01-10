@@ -5,9 +5,9 @@ const mockResponses: IRepo[] = require('../../../integration-tests/mock-response
 it('should set default state', () => {
     const expectedDefaultState = {
         error: undefined,
-        loading: true,
+        loading: false,
         repoList: [],
-        searchTerm: 'ben-cloud9'
+        searchTerm: ''
     }
 
     const actualDefaultState = reducer();
@@ -23,9 +23,9 @@ it('should set repo list when called with valid option object', () => {
 
     const expectedState = {
         error: undefined,
-        loading: true,
+        loading: false,
         repoList: mockResponses,
-        searchTerm: 'ben-cloud9'
+        searchTerm: ''
     }
 
     const actualState = reducer(undefined, validActionObject);
@@ -43,7 +43,7 @@ it('should set loading', () => {
         error: undefined,
         loading: false,
         repoList: [],
-        searchTerm: 'ben-cloud9'
+        searchTerm: ''
     }
 
     const actualState = reducer(undefined, validActionObject);
@@ -59,12 +59,30 @@ it('should set error', () => {
 
     const expectedState = {
         error: validActionObject.error,
-        loading: true,
+        loading: false,
         repoList: [],
-        searchTerm: 'ben-cloud9'
+        searchTerm: ''
     }
 
     const actualState = reducer(undefined, validActionObject);
 
     expect(actualState).toEqual(expectedState);
-})
+});
+
+it('should set search term', () => {
+    const validActionObject = {
+        type: 'SET_SEARCH_TERM',
+        searchTerm: 'this-is-a-search-term'
+    }
+
+    const expectedState = {
+        error: undefined,
+        loading: false,
+        repoList: [],
+        searchTerm: validActionObject.searchTerm
+    }
+
+    const actualState = reducer(undefined, validActionObject);
+
+    expect(actualState).toEqual(expectedState);
+});

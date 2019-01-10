@@ -1,4 +1,4 @@
-import { setRepoList, setLoading, setError } from './actions';
+import { setRepoList, setLoading, setError, setSearchTerm } from './actions';
 const mockRepoList = require('../../../integration-tests/mock-responses.json');
 
 it('should return correct action object with default params', () => {
@@ -39,5 +39,15 @@ it('should return correct action object with valid error', () => {
     }
 
     const actualAction = setError('this-is-an-error');
+    expect(actualAction).toEqual(expectedAction);
+});
+
+it('should return correct action object with valid search term', () => {
+    const expectedAction = {
+        type: 'SET_SEARCH_TERM',
+        searchTerm: 'this-is-an-search-term'
+    }
+
+    const actualAction = setSearchTerm('this-is-an-search-term');
     expect(actualAction).toEqual(expectedAction);
 });

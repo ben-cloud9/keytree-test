@@ -1,4 +1,5 @@
 import { IAction } from '../types/types';
+import github from '../../github-api/github-api';
 
 type IRepoList = any;
 
@@ -21,5 +22,12 @@ export const setError = (error: string): IAction => {
     return {
         type: 'SET_ERROR',
         error
+    }
+}
+
+export const setSearchTerm = (searchTerm: string): IAction => {
+    return {
+        type: 'SET_SEARCH_TERM',
+        searchTerm
     }
 }

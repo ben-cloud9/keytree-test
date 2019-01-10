@@ -1,8 +1,35 @@
 $core-blue: blue;
-$dark-grey: rgb(92, 79, 79);
+$dark-grey: rgba(0, 0, 0, 0.516);
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: black;
+}
+
+body {
+  margin: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: sans-serif;
+  color: white;
+}
+
+p, a, small, label, input, button, li, code {
+  font-family: sans-serif;
+  color: white;
+}
+
+code {
+  font-style: italic;
+  font-size: 14px;
+}
+
 
 .container {
   width: 100%;
   max-width: 900px;
   margin: auto;
+  padding: 8px;
 }
