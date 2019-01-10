@@ -1,5 +1,5 @@
 import { setRepoList, setLoading, setError, setSearchTerm } from './actions';
-const mockRepoList = require('../../../integration-tests/mock-responses.json');
+const mockRepoList = require('../../../cypress/fixtures/mock-responses.json');
 
 it('should return correct action object with default params', () => {
     const expectedAction = {

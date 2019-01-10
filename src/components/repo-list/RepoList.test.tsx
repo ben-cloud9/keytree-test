@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { RepoList } from './RepoList';
-const mockResponses = require('../../../integration-tests/mock-responses.json');
+const mockResponses = require('../../../cypress/fixtures/mock-responses.json');
 
 it('should show a message to prompt search when searchTerm is empty', () => {
     const wrapper = shallow(<RepoList repoList={[]} searchTerm="" />);

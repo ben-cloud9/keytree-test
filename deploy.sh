@@ -12,7 +12,7 @@ PROCESS_NAME=keytree-test
 
 set +x
 
-if ssh -i ~/.ssh/throwaway.pem ubuntu@$APP_IP 'sudo pm2 stop '$PROCESS_NAME' ; sudo rm -r '$REPO_NAME' ; git clone https://ben-cloud9:'$GITHUBTOKEN'@github.com/ben-cloud9/'$REPO_NAME'.git ; cd '$REPO_NAME' ; npm install ; npm run build ; sudo pm2 --name="'$PROCESS_NAME'" --update-env start server/server.js'; then
+if ssh -i ~/.ssh/throwaway.pem ubuntu@$APP_IP 'sudo pm2 stop '$PROCESS_NAME' ; sudo rm -r '$REPO_NAME' ; git clone https://ben-cloud9:'$GITHUBTOKEN'@github.com/ben-cloud9/'$REPO_NAME'.git ; cd '$REPO_NAME' ; npm install ; NODE_ENV=production npm run build ; sudo pm2 --name="'$PROCESS_NAME'" --update-env start server/server.js'; then
 	echo "successfully deployed!"
 else
 	echo "ERROR! Please see logs and fix ASAP" 1>&2

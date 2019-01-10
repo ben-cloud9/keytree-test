@@ -3,7 +3,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Available Scripts
 
 
-### `npm start`
+### running locally
+Run in development mode with hot reloading`npm run start:dev`
 
 
 ### `npm test`

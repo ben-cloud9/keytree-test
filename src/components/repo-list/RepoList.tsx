@@ -51,10 +51,10 @@ export class RepoList extends Component<Partial<IRepoListProps>> {
             if (this.props.setError) {
                 if (err.response.status === 403) {
                     this.props.setError('You have exceed the github API rate limit, please try again later');
-                } else if (err.response.state === 404) {
-                    this.props.setError(`Unable to find GitHub data for search term: '${this.props.searchTerm}'`);    
+                } else if (err.response.status === 404) {
+                    this.props.setError(`Unable to find GitHub data for search term`);    
                 } else {
-                    this.props.setError(`Unknown error - unable to retreive GitHub data for search term: '${this.props.searchTerm}'`);
+                    this.props.setError(`Unknown error - unable to retreive GitHub data for search term`);
                 }
             }
             this.setLoading(false);

@@ -1,6 +1,6 @@
 import reducer from './reducer';
 import { IRepo, IAction } from '../types/types';
-const mockResponses: IRepo[] = require('../../../integration-tests/mock-responses.json');
+const mockResponses: IRepo[] = require('../../../cypress/fixtures/mock-responses.json');
 
 it('should set default state', () => {
     const expectedDefaultState = {

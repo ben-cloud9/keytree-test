@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import RepoListItem from './RepoListItem';
 import { format } from 'date-fns';
 
-const mockResponses = require('../../../integration-tests/mock-responses.json');
+const mockResponses = require('../../../cypress/fixtures/mock-responses.json');
 
 it('should render required info', () => {
     const wrapper = shallow(<RepoListItem repo={mockResponses[0]} />)
