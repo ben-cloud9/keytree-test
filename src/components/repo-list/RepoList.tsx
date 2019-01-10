@@ -30,10 +30,12 @@ export class RepoList extends Component<Partial<IRepoListProps>> {
             this.setLoading(true);
 
             const repoListData = await github.getRepos(this.props.searchTerm);
-            if (this.props.setRepoList && this.props.setSearchTerm) {
+            if (this.props.setRepoList && this.props.setSearchTerm && this.props.setError) {
                 this.props.setRepoList(repoListData);
                 this.props.setSearchTerm('');
-                return this.setLoading(false);
+                this.props.setError('');
+                this.setLoading(false);
+                return this.scrollToTopOfList()
             }
 
             throw new Error('please ensure you have provided a method to setRepoList and setLoading props');
@@ -59,6 +61,11 @@ export class RepoList extends Component<Partial<IRepoListProps>> {
         }
     }
 
+    scrollToTopOfList() {
+        const top = document.querySelector('#repo-list')!.getBoundingClientRect().top;
+        window.scrollTo({ left: 0, top, behavior: 'smooth' });
+    }
+
     setLoading(loading: boolean) {
         if (this.props.setLoading) {
             this.props.setLoading(loading);
@@ -73,7 +80,7 @@ export class RepoList extends Component<Partial<IRepoListProps>> {
 
     render() {
         return (
-            <div>
+            <div id="repo-list">
                 {this.props.renderList && (
                     <div>
                         <h2>Returned Repositories</h2>
