@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Provider } from 'react-redux';
 import Home from './components/Home';
 import configureStore from './store/store';
+import { register } from './serviceWorker';
 
 class App extends Component {
   render() {
@@ -15,5 +16,7 @@ class App extends Component {
     );
   }
 };
+
+register();
 
 export default App;
