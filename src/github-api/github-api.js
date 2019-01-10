@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios'
 
 // Documentation is at https://developer.github.com/v3
 
@@ -23,4 +23,9 @@ const getUserData = (username) => {
             user: user.data,
             orgs: orgs.data
         }));
+};
+
+export default {
+    getUserData,
+    getRepos
 };

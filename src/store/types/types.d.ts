@@ -95,14 +95,17 @@ export interface IRepo {
 };
 
 export interface IState {
-   error?: boolean;
-   loading?: boolean;
-   repoList?: {}[];
+   error: string | undefined;
+   loading: boolean | undefined;
+   repoList: IRepo[] | undefined;
+   searchTerm: string;
 };
 
-export type ActionTypes = '@@INIT' | 'SET_REPO_LIST';
+export type ActionTypes = '@@INIT' | 'SET_REPO_LIST' | 'SET_LOADING' | 'SET_ERROR';
 
 export interface IAction {
    type: ActionTypes;
    repoList?: IRepo[];
+   loading?: boolean;
+   error?: string;
 };

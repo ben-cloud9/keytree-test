@@ -1,4 +1,4 @@
-import { setRepoList } from './actions';
+import { setRepoList, setLoading, setError } from './actions';
 const mockRepoList = require('../../../integration-tests/mock-responses.json');
 
 it('should return correct action object with default params', () => {
@@ -18,5 +18,26 @@ it('shoudl return correct action object with valid repoList', () => {
     }
 
     const actualAction = setRepoList(mockRepoList);
+    expect(actualAction).toEqual(expectedAction);
+});
+
+
+it('should return correct action object with loading', () => {
+    const expectedAction = {
+        type: 'SET_LOADING',
+        loading: false
+    }
+
+    const actualAction = setLoading(false);
+    expect(actualAction).toEqual(expectedAction);
+});
+
+it('should return correct action object with valid error', () => {
+    const expectedAction = {
+        type: 'SET_ERROR',
+        error: 'this-is-an-error'
+    }
+
+    const actualAction = setError('this-is-an-error');
     expect(actualAction).toEqual(expectedAction);
 });
