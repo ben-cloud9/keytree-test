@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { IRepo } from '../../store/types/types';
 import github from '../../github-api/github-api';
 import { setRepoList, setLoading, setError, setSearchTerm } from '../../store/actions/actions';
+import Loading from '../utils/Loading';
 
 import './RepoList.scss';
 import RepoListItem from './RepoListItem';
@@ -93,7 +94,7 @@ export class RepoList extends Component<Partial<IRepoListProps>> {
                     </div>
                 )}
                 {this.props.loading === true && (
-                    <p>Loading...</p>
+                    <Loading />
                 )}
                 {!!this.props.error && (
                     <div className="error-message">

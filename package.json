@@ -27,7 +27,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "start:server": "node server/server.js",
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
+    "deploy": "./deploy"
   },
   "eslintConfig": {
     "extends": "react-app"

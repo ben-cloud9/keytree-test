@@ -6,7 +6,7 @@ import SearchForm from './search-form/SearchForm';
 const Home = () => (
     <div className="container">
         <div>
-            <img src="/github-logo.png" alt="Github logo" className="header-image"/>
+            <img src="/github-logo.png" alt="Github octocat logo" className="header-image"/>
             <h1 className="home-title">Github Repo Search</h1>
         </div>
         
