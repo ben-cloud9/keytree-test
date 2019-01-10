@@ -10,16 +10,19 @@
     font-size: 28px;
     margin-top: 0;
     margin-bottom: 8px;
+    word-break: break-all;
 }
 
 .repo-list-item__description {
     margin-bottom: 16px;
     margin-top: 0;
+    word-break: break-all;
 }
 
 .repo-list-item__meta {
     list-style-type: none;
     padding-left: 0;
+    word-break: break-all;
 
     li {
         margin-bottom: 16px;
