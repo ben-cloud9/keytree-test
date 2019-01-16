@@ -1,7 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 
-# Keytree assignment
+# React assignment
+This is an assignment i did for a contract - the brief was to get data from the github API and display the results in the browser using react
+
 Overall I spent about 5 hours solid on this, I would have liked to have done more but ran out of time! Here's a few of the things I would have liked to have done/finished:
 - More types - there are quite a few `any` types which I would have preferred to have not left
 - More unit tests - There are more scenarios and edge cases that could be covered with these
