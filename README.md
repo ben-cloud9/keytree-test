@@ -12,10 +12,6 @@ Overall I spent about 5 hours solid on this, I would have liked to have done mor
 - Taken the time to meet all the PWA guidelines to enable the 'add to homescreen' prompt
 - Add 404 page
 
-This project has been deployed to [react-assignmnent.cloud9people.co.uk](https://keytree.cloud9people.co.uk) using:
-- AWS EC2 ubuntu server
-- nginx to proxy traffic to server and force https
-
 ## Running locally
 `npm run start:dev`
 Run in development mode with hot reloading
